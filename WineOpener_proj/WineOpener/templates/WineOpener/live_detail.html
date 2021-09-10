@@ -98,19 +98,21 @@
 <li><a href="#"></a></li>
 <!--追加(2021/09/10)-->
 <!--自分で調べたフォーム-->
-<form action="/WineOpener/live/live2" method="post">
+<form action="/WineOpener/live/live1_bbs" method="post">
     {% csrf_token %}
     <textarea id="comment" class="form-control" name="comment"></textarea>
     <input id="submit" type="submit" value="送信">
 </form>
 <div id="comment_area">
-    <table>
+    <table class="table table-striped table-bordered">
       <tr>
+        <th scope="col">ユーザーID</th>
         <th scope="col">コメント</th>
       </tr>
-      {% for live in live_bbs %}
+      {% for bbs_information in bbs_informations %}
       <tr>
-        <td>{{ live.comment }}</td>
+        <td>{{ bbs_information.user_id }}</td>
+        <td>{{ bbs_information.comment }}</td>
       </tr>
       {% endfor %}
     </table>

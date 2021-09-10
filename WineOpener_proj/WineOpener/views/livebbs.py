@@ -20,12 +20,11 @@ class BbsView(views.APIView):
         return render(request,"WineOpener/live_detail.html",context)
 
     def post(self, request, *args, **kwargs):
-        print(request.data)
-        sample = Topic()
-        sample.comment=request.data["comment"]
-        sample.user_id=request.user.id
-        #sample.timestamp=request.data["timestamp"] 修正必要(2021/09/10)
-        sample.save()
+        topic = Topic()
+        topic.comment=request.data["comment"]
+        topic.user_id=request.user.id
+        #topic.timestamp=request.data["timestamp"] 修正必要(2021/09/10)
+        topic.save()
         return redirect("/WineOpener/live/live1")
 
 index   = BbsView.as_view()

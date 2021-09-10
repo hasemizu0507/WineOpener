@@ -15,8 +15,8 @@ def list_view(request):
 @login_required
 def detail_view(request):
     wine_informations = Wine.objects.all().order_by('id')
-    live_bbs = Topic.objects.all()
-    return render(request, 'WineOpener/live_detail.html', {'wine_informations': wine_informations, 'live_bbs': live_bbs})
+    bbs_informations = Topic.objects.all()
+    return render(request, 'WineOpener/live_detail.html', {'wine_informations': wine_informations, 'bbs_informations': bbs_informations})
 
 def wine_view(request, livewine_id):
     wine_information = get_object_or_404(Wine, id=livewine_id)
