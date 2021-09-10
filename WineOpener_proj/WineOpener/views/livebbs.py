@@ -21,9 +21,8 @@ class BbsView(views.APIView):
 
     def post(self, request, *args, **kwargs):
         topic = Topic()
-        topic.comment=request.data["comment"]
         topic.user_id=request.user.id
-        #topic.timestamp=request.data["timestamp"] 修正必要(2021/09/10)
+        topic.comment=request.data["comment"]
         topic.save()
         return redirect("/WineOpener/live/live1")
 
