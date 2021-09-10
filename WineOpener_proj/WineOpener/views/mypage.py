@@ -62,9 +62,9 @@ def create_checkout_session(request):# 「この商品を購入」ボタンが�
                 {
                     'price_data': {
                         'currency': 'jpy', # 通貨（円）
-                        'unit_amount': 2000, # 金額
+                        'unit_amount': price_total, # 金額
                         'product_data': { # 商品説明・画像
-                            'name': 'sample house',
+                            'name': user_name + '様',
                             'images': ['http://gahag.net/img/201606/12s/gahag-0095672681-1.jpg'],
                             },
                     },

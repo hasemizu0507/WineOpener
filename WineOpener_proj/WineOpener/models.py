@@ -40,7 +40,7 @@ class Wine(models.Model): # 変更(2021/09/08)
         verbose_name_plural = '販売ワインデータ'
     
     id = models.CharField('ワインID',max_length=6,primary_key=True) # 'A00001' # 変更（2021/09/07）
-    thumbnail = models.ImageField('サムネイル',upload_to='')      # 'WineOpener/images/live1.jpg' 変更(2021/09/11)
+    thumbnail = models.ImageField('サムネイル',upload_to='')      #  変更(2021/09/1)
     name = models.CharField('ワイン名',max_length=50)      # 'シャトー・オー・プニャン'
     price = models.IntegerField('価格')    # '2200'
     stock = models.IntegerField('在庫')    # '5'
