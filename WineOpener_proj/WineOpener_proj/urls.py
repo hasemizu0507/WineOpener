@@ -20,6 +20,8 @@ from django.contrib import admin
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.conf import settings # 追加(2021/09/11)
+from django.conf.urls.static import static # 追加(2021/09/11)
 
 
 from WineOpener.views.register import register_view, done_view #追加(2021/09/06)
@@ -36,4 +38,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', register_view, name='register'),
     path('accounts/register/done', done_view, name='register_done'),
-]
+] + static(settings.IMAGE_URL, document_root=settings.IMAGE_ROOT)

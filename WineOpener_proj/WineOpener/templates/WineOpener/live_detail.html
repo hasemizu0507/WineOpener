@@ -59,7 +59,7 @@
         
         {% for wine_information in wine_informations %}
         <tr>
-            <th><img src="{% static '{{ wine_information.thumbnail }}' %}" width="100px" height="100px"  alt="wine_thumbnail"></th><!--画像の挿入が未実装…-->
+            <th><img src='{{ IMAGE_URL }}{{ wine_information.thumbnail }}' width="100px" height="100px"  alt="wine_thumbnail"></th><!--画像の挿入が未実装…-->
             <th>{{ wine_information.name }}</th>
             <th>・価格：￥{{ wine_information.price }}<br>・収穫年：{{ wine_information.harvest_year }}年<br>・生産者：{{ wine_information.producer }}<br>・産地：{{ wine_information.region }}<br>・タイプ：{{ wine_information.style }}<br>・品種：{{ wine_information.type }}</th>
             <th>{{ wine_information.stock }}</th>

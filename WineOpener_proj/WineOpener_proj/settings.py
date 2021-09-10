@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media', # 追加(2021/09/11)
             ],
             'builtins':[ 
                 'bootstrap4.templatetags.bootstrap4' #追加(2021/09/06)
@@ -130,6 +131,9 @@ STATICFILES_DIRS = (
         os.path.join(BASE_DIR, "static"),
     ]
 )
+
+IMAGE_ROOT = os.path.join(BASE_DIR, 'static/WineOpener/images')
+IMAGE_URL = '/static/WineOpener/images/'
 
 LOGIN_URL='/accounts/login'
 LOGIN_REDIRECT_URL='/'
