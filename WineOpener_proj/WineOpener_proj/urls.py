@@ -38,4 +38,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', register_view, name='register'),
     path('accounts/register/done', done_view, name='register_done'),
-] + static(settings.IMAGE_URL, document_root=settings.IMAGE_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
