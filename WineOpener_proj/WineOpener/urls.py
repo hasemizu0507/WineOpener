@@ -12,7 +12,7 @@ urlpatterns = [
     path('live/live1', live.detail_view, name='live_detail'),
     path('live/live1/<slug:livewine_id>', live.wine_view, name='live_wine'),
 
-    path('live/live1', livebbs.index, name='index'),
+    path('live/live1', livebbs.index, name='index'), # 追加(2021/09/10)
     path('live/live1/<pk>', livebbs.delete, name='delete'),
 
     path('mypage', mypage.mypage_top, name='mypage_top'),

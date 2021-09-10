@@ -95,7 +95,7 @@
 
 <h2>ARCHIVE</h2>
 <ul class="submenu">
-<li><a href="#">コメント欄</a></li>
+<li><a href="#"></a></li>
 <!--追加(2021/09/10)-->
 <form>
     {% csrf_token %}
@@ -149,6 +149,9 @@ if (OCwindowWidth() <= 900) {
 <!--パララックス用ファイル読み込み
 <script src="{% static 'WineOpener/js/jquery.inview.js' %}"></script>
 <script src="{% static 'WineOpener/js/jquery.inview_set.js' %}"></script>-->
+
+<script src="{% static 'WineOpener/js/ajax.js' %}"></script> <!--追加(2021/09/10)-->
+<script src="{% static 'WineOpener/js/onload.js' %}"></script> <!--追加(2021/09/10)-->
 
 </body>
 </html>

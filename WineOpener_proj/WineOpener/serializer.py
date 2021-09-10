@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Topic
+from WineOpener.models import Topic
 
 class TopicSerializer(serializers.ModelSerializer):
 

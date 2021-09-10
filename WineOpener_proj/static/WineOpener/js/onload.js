@@ -16,7 +16,7 @@ function delete_comment(identifier){
 }
 
 function ajax_send(){
-    
+    console.log('aaaa');
     var user_param   = { comment   : $("#comment").val() };
 
     $.ajax({
