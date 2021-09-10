@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 import json
-from WineOpener.models import Profile, Wine, Cart # 変更(2021/09/08)
+from WineOpener.models import Profile, Wine, Cart, Topic # 変更(2021/09/08)
 from django.contrib.auth.models import User
 
 import random
@@ -15,7 +15,8 @@ def list_view(request):
 @login_required
 def detail_view(request):
     wine_informations = Wine.objects.all().order_by('id')
-    return render(request, 'WineOpener/live_detail.html', {'wine_informations': wine_informations})
+    live_bbs = Topic.objects.all()
+    return render(request, 'WineOpener/live_detail.html', {'wine_informations': wine_informations, 'live_bbs': live_bbs})
 
 def wine_view(request, livewine_id):
     wine_information = get_object_or_404(Wine, id=livewine_id)

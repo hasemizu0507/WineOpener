@@ -8,7 +8,6 @@ import json
 from WineOpener.models import Profile, Wine, Cart, Topic # 変更(2021/09/10)
 from WineOpener.serializer import TopicSerializer
 from django.contrib.auth.models import User
-
 import random
 
 from django.template.loader import render_to_string
@@ -21,17 +20,13 @@ class BbsView(views.APIView):
         return render(request,"WineOpener/live_detail.html",context)
 
     def post(self, request, *args, **kwargs):
-
-        serializer      = TopicSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-
-        data        = Topic.objects.all()
-        context     = {"data":data}
-        content_data_string     = render_to_string('WineOpener/comment.html', context ,request)
-        json_data               = { "content" : content_data_string }
-
-        return JsonResponse(json_data)
+        print(request.data)
+        sample = Topic()
+        sample.comment=request.data["comment"]
+        sample.user_id=request.user.id
+        #sample.timestamp=request.data["timestamp"] 修正必要(2021/09/10)
+        sample.save()
+        return redirect("/WineOpener/live/live1")
 
 index   = BbsView.as_view()
 
