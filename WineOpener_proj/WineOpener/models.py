@@ -74,11 +74,15 @@ class Cart(models.Model): #変更(2021/09/08)
     
     user_id = models.CharField('ユーザーID',max_length=6) # ユーザーID
     product_id = models.CharField('商品ID',max_length=6) # 商品ID
+    product_name = models.CharField('商品名', max_length=50, null=True, blank=True) # 商品名
+    product_price = models.IntegerField('価格',null=True, blank=True) # 価格
     timestamp = models.DateTimeField('追加日時',auto_now_add=True) # 追加日時
 
     def __str__(self):
         return self.user_id +' '\
             +self.product_id +' '\
+            +self.product_name +' '\
+            +str(self.product_price)+' '\
             +self.timestamp
 
 class Topic(models.Model):

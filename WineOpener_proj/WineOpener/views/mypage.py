@@ -65,6 +65,7 @@ def create_checkout_session(request):# 「この商品を購入」ボタンが�
                         'unit_amount': price_total, # 金額
                         'product_data': { # 商品説明・画像
                             'name': user_name + '様',
+
                             'images': ['http://gahag.net/img/201606/12s/gahag-0095672681-1.jpg'],
                             },
                     },

@@ -59,11 +59,11 @@
         </tr>
         <tr>
             <th>価格</th>
-            <td>{{ wine_information.price }}</td>
+            <td>￥{{ wine_information.price }}</td>
         </tr>
         <tr>
             <th>収穫年</th>
-            <td>{{ wine_information.harvest_year }}</td>
+            <td>{{ wine_information.harvest_year }}年</td>
         </tr>
         <tr>
             <th>生産者</th>
@@ -82,10 +82,12 @@
             <td>{{ wine_information.type }}</td>
         </tr>
     </table> 
+    {% if wine_information.stock > 0 %}
     <form action="{% url 'WineOpener:edit_cart' livewine_id=wine_information.id %}" method="post">
         {% csrf_token %}
         <input type="submit" value="add/delite" class="btn btn-primary mt-2">
-    </form>      
+    </form>
+    {% endif %} 
 </dl>
 
 </section>

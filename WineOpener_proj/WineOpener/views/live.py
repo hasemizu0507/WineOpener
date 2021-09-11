@@ -30,6 +30,7 @@ def edit_cart(request, livewine_id):
     if previous_cart.exists(): # 編集前のカートの中身にこの商品はある？
         previous_cart.delete() # あればその商品を削除
     else:
-        product = Cart(user_id=user_id, product_id=livewine_id) # なければユーザーID，商品ID，商品名，価格をカートに追加
+        product = Cart(user_id=user_id, product_id=livewine_id, product_name=wine_information.name, product_price=wine_information.price) # なければユーザーID，商品ID，商品名，価格をカートに追加
+        
         product.save()
     return render(request, 'WineOpener/live_wine.html', {'wine_information': wine_information})
